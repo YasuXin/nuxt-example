@@ -11,9 +11,7 @@
         </NuxtLink>
       </div>
       <div class="skills-text">
-        <p>
-          <slot name="text"></slot>
-        </p>
+        <slot name="text"></slot>
       </div>
     </div>
 
@@ -44,15 +42,6 @@
   font-style: italic;
   font-size: $subtitle-font-size;
 }
-.skills-text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 6%;
-  & p {
-    text-overflow: ellipsis;
-  }
-}
 
 @include sp-s {
   .skills-subtitle {
@@ -69,7 +58,7 @@
     padding: 0;
     margin: 0;
   }
-  .skills-text p {
+  ::v-slotted(.skills-text p) {
     width: 95%;
     font-size: $sp-font-size;
   }

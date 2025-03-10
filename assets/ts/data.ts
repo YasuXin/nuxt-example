@@ -46,6 +46,7 @@ export const certificationArray: CertificationArray[] = [
     {id: 10, text: "Certify Photoshop エキスパート", date: "2022-10"},
     {id: 11, text: "Certify Webクリエーター エキスパート", date: "2022-11"},
 ]
+certificationArray.reverse()
 
 export const careerArray: CareerArray[] = [
     {id: 1, title: "生誕", text:"1989年7月、生まれる。"},

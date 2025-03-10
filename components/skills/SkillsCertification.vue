@@ -30,7 +30,7 @@ const props =defineProps({
         {{props.title}}
       </template>
       <template v-slot:text>
-        <template v-for="(item, index) in certificationArray" :key="item.id" :class="[index > 7 ? 'hide' : '']">・{{item.text}}<br></template>
+        <p v-for="(item, index) in certificationArray" :key="item.id" :class="[index > 7 ? 'hide' : '']">・{{item.text}}</p>
         <p style="text-align: right;">ほか</p>
       </template>
     </SkillsItem>
