@@ -1,0 +1,128 @@
+$sp-w: 500px;
+$sp-h-small: calc(100vw*1.2);
+$sp-h-late: 800px;
+$sp-w-horizontal: calc(100vh*1.2);
+$sp-h-horizontal: 500px;
+$header-narrow: 900.5px;
+$header-wide: 901px;
+$detail-narrow: 767.5px;
+
+$tab: 768px;
+$lap: 1024px;
+$pc: 1200px;
+
+/* Font Color */
+$text-black: #000;
+$text-darker: #333;
+$text-dark: #666;
+$text-light: #999;
+$text-lighter: #ccc;
+$text-white: #fff;
+
+/* Font Size */
+$title-font-big: 40px;
+$title-font-size: 36px;
+$subtitle-font-size: 30px;
+
+$font-size-normal: 16px;
+$font-size-big: 24px;
+
+$sp-title-font-size: 10vw;
+$sp-subtitle-font-size: 8vw;
+$sp-font-size-big: 6vw;
+$sp-font-size: 5vw;
+
+/* Border */
+$border-light: 2px solid #ccc;
+$border-gray: 2px solid gray;
+$border-dark: 2px solid #333;
+$border-light-1: 1px solid #ccc;
+$border-gray-1: 1px solid gray;
+$border-dark-1: 1px solid #333;
+
+$bg-clear-white: rgba(255, 255, 255, 0.3);
+$header-bg-color: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(240,240,240,0.7));
+$title-bg-color: linear-gradient(90deg, rgba(235,255,240,0.9), rgba(240,240,240,0.4));
+$sp-footer-bg: linear-gradient(0, rgba(255,255,255,0.05), rgba(255,255,255,0.06));
+$bg-clear-black: rgba(0,0,0,0.8);
+
+$header-height: 60px;
+$header-height-sp: 80px;
+
+$container-height: 540px;
+$container-height-sp: 720px;
+$container-height-sp-large: 780px;
+
+$box-height: 440px;
+$box-height-sp: 640px;
+$box-height-sp-large: 700px;
+
+$detail-container-height-l: 800px;
+$detail-container-height-h: 1350px;
+$sp-detail-container-height-l: 1200px;
+$sp-detail-container-height-h: 1750px;
+
+$hovered-color-dark: rgba(0,0,0,0.2);
+
+
+@mixin sp-s {
+  //通常サイズのiPhoneとAndroid
+  @media screen and (max-width: ($sp-w)) and (min-height: ($sp-h-small)) {
+    @content;
+  }
+}
+
+@mixin sp-sh {
+  //通常サイズのiPhoneとAndroidの横向き
+  @media screen and (min-width: ($sp-w-horizontal)) and (max-height: ($sp-h-horizontal)) {
+    @content;
+  }
+}
+
+@mixin sp-l {
+  //広い画面サイズのiPhone
+  @media screen and (max-width: ($sp-w)) and (min-height: ($sp-h-late)) {
+    @content;
+  }
+}
+
+@mixin header-narrow {
+  //狭い幅のヘッダー
+  @media screen and (max-width: $header-narrow) {
+    @content;
+  }
+}
+
+@mixin header-wide {
+  //広い幅のヘッダー
+  @media screen and (min-width: $header-wide) {
+    @content;
+  }
+}
+
+@mixin detailNarrow {
+  @media screen and (max-width: $detail-narrow) {
+    @content
+  }
+}
+
+@mixin tab {
+  // 768px以上の時に適応
+  @media screen and (min-width: ($tab)) {
+    @content;
+  }
+}
+
+@mixin lap {
+  // 1024px以上の時に適応
+  @media screen and (min-width: ($lap)) {
+    @content;
+  }
+}
+
+@mixin pc {
+  // 1200px以上の時に適応
+  @media screen and (min-width: ($pc)) {
+    @content;
+  }
+}
