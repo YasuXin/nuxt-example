@@ -33,7 +33,7 @@ const props = defineProps({
   #hamburger-container {
     display: block;
     position: relative;
-    flex-basis: 100px;
+    flex-basis: 70px;
     height: 60px;
   }
   #hamburger-button {
