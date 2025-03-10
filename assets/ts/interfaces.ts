@@ -35,5 +35,6 @@ export interface ProductArray {
     title: string,
     text: string,
     textDetail: string,
+    src: number,
     link: string
 }

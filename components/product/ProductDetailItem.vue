@@ -1,57 +1,24 @@
 <script setup lang="ts">
-import {productArray} from "~/assets/ts/data"
+import {reversedProductArray} from "~/assets/ts/data"
 
-productArray.reverse()
 </script>
 
 <template>
 
-  <section class="product-detail-item detail-item">
-    <a :href="productArray[3].link"><DetailSubtitleBox :title="productArray[3].title"></DetailSubtitleBox></a>
-    <DetailTextBox>
-      <div class="product-detail-text detail-text">
-        <p>{{ productArray[3].textDetail }}<br>
-          リンク先：<a :href="productArray[3].link" class="normal-link">{{ productArray[3].link }}</a>
-        </p>
-        <img src="~/assets/img/product/product0.png" :alt="`サムネイル（${productArray[3].title}）`" width="250">
-      </div>
-    </DetailTextBox>
-  </section>
+  <section class="product-detail-item detail-item" v-for="item in reversedProductArray" :key="item.id">
 
-  <section class="product-detail-item detail-item">
-    <a :href="productArray[2].link"><DetailSubtitleBox :title="productArray[2].title"></DetailSubtitleBox></a>
+    <!--繰り返し処理 ここから-->
+    <a :href="item.link"><DetailSubtitleBox :title="item.title"></DetailSubtitleBox></a>
     <DetailTextBox>
       <div class="product-detail-text detail-text">
-        <p>{{ productArray[2].textDetail }}<br>
-          リンク先：<a :href="productArray[2].link" class="normal-link">{{ productArray[2].link }}</a>
+        <p>{{ item.textDetail }}<br>
+          リンク先：<a :href="item.link" class="normal-link">{{ item.link }}</a>
         </p>
-        <img src="~/assets/img/product/product0.png" :alt="`サムネイル（${productArray[2].title}）`" width="250">
+        <img :src="`../img/product${item.src}.png`" :alt="`サムネイル（${item.title}）`" width="250">
       </div>
     </DetailTextBox>
-  </section>
+    <!--繰り返し処理 ここまで-->
 
-  <section class="product-detail-item detail-item">
-    <a :href="productArray[1].link"><DetailSubtitleBox :title="productArray[1].title"></DetailSubtitleBox></a>
-    <DetailTextBox>
-      <div class="product-detail-text detail-text">
-        <p>{{ productArray[1].textDetail }}<br>
-          リンク先：<a :href="productArray[1].link" class="normal-link">{{ productArray[1].link }}</a>
-        </p>
-        <img src="~/assets/img/product/product0.png" :alt="`サムネイル（${productArray[1].title}）`" width="250">
-      </div>
-    </DetailTextBox>
-  </section>
-
-  <section class="product-detail-item detail-item">
-    <a :href="productArray[0].link"><DetailSubtitleBox :title="productArray[0].title"></DetailSubtitleBox></a>
-    <DetailTextBox>
-      <div class="product-detail-text detail-text">
-        <p>{{ productArray[0].textDetail }}<br>
-          リンク先：<a :href="productArray[0].link" class="normal-link">{{ productArray[0].link }}</a>
-        </p>
-        <img src="~/assets/img/product/product1.png" :alt="`サムネイル（${productArray[0].title}）`" width="250">
-      </div>
-    </DetailTextBox>
   </section>
 
 </template>

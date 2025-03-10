@@ -78,63 +78,17 @@ onMounted(() => {
           <div id="product-box" class="box" v-show="toggle">
             <client-only>
 
-              <!-- 1番目  No Image -->
-              <div class="product-item">
+              <div class="product-item" v-for="(item, index) in reversedProductArray" :class="[index > 3 ? 'hide' : '']">
                 <div class="product-image-box">
-                  <a :href="reversedProductArray[0].link" class="normal-link">
-                    <img src="~/assets/img/product/product0.png" :alt="`サムネイル（${reversedProductArray[0].title}）`" class="product-image" width="200"/>
+                  <a :href="item.link" class="normal-link">
+                    <img :src="`../img/product${item.src}.png`" :alt="`サムネイル（${item.title}）`" class="product-image" width="200"/>
                   </a>
                 </div>
 
                 <div class="product-text-box">
-                  <h2>{{reversedProductArray[0].title}}</h2>
-                  <p v-if="pToggle">{{reversedProductArray[0].text}}</p>
-                  <p><a :href="reversedProductArray[0].link" class="normal-link">リンク先</a></p>
-                </div>
-              </div>
-
-              <!-- 2番目  No Image -->
-              <div class="product-item">
-                <div class="product-image-box">
-                  <a :href="reversedProductArray[1].link" class="normal-link">
-                    <img src="~/assets/img/product/product0.png" :alt="`サムネイル（${reversedProductArray[1].title}）`" class="product-image" width="200"/>
-                  </a>
-                </div>
-
-                <div class="product-text-box">
-                  <h2>{{reversedProductArray[1].title}}</h2>
-                  <p v-if="pToggle">{{reversedProductArray[1].text}}</p>
-                  <p><a :href="reversedProductArray[1].link" class="normal-link">リンク先</a></p>
-                </div>
-              </div>
-
-              <!-- 3番目  No Image -->
-              <div class="product-item">
-                <div class="product-image-box">
-                  <a :href="reversedProductArray[2].link" class="normal-link">
-                    <img src="~/assets/img/product/product0.png" :alt="`サムネイル（${reversedProductArray[2].title}）`" class="product-image" width="200"/>
-                  </a>
-                </div>
-
-                <div class="product-text-box">
-                  <h2>{{reversedProductArray[2].title}}</h2>
-                  <p v-if="pToggle">{{reversedProductArray[2].text}}</p>
-                  <p><a :href="reversedProductArray[2].link" class="normal-link">リンク先</a></p>
-                </div>
-              </div>
-
-              <!-- 4番目  KAKUU NEKO CAFE -->
-              <div class="product-item">
-                <div class="product-image-box">
-                  <a :href="reversedProductArray[3].link" class="normal-link">
-                    <img src="~/assets/img/product/product1.png" :alt="`サムネイル（${reversedProductArray[3].title}）`" class="product-image" width="200"/>
-                  </a>
-                </div>
-
-                <div class="product-text-box">
-                  <h2>{{reversedProductArray[3].title}}</h2>
-                  <p v-if="pToggle">{{reversedProductArray[3].text}}</p>
-                  <p><a :href="reversedProductArray[3].link" class="normal-link">リンク先</a></p>
+                  <h2>{{item.title}}</h2>
+                  <p v-if="pToggle">{{item.text}}</p>
+                  <p><a :href="item.link" class="normal-link">リンク先</a></p>
                 </div>
               </div>
 
@@ -157,9 +111,6 @@ onMounted(() => {
 </template>
 
 <style lang="scss" scoped>
-#product-container {
-
-}
 #product-box-parent {
   display: flex;
   flex-direction: column;
@@ -187,9 +138,6 @@ onMounted(() => {
   align-items: center;
   width: 200px;
   height:200px;
-}
-#hovered-img {
-
 }
 .hovered-hidden {
   display: none;
@@ -254,5 +202,9 @@ onMounted(() => {
 }
 .fadein-enter-from {
   opacity: 0;
+}
+
+.hide {
+  display: none;
 }
 </style>
