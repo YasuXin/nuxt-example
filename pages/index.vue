@@ -56,7 +56,7 @@ promiseFadeout.then(() => {
 }
 
 #welcome-text {
-  position: fixed;
+  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: center;
