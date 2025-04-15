@@ -9,7 +9,7 @@ import type {
 
 export const admin = "yasu"
 export const adminUniversity = "とある大学"
-export const adminEmail = "kone.ko2nekomi.mi69@gmail.com"
+export const adminEmail = "kangzhengxinzhuang@gmail.com"
 
 const imgPath = "~/assets/img/"
 const productDirOld = "../img/product/product"
