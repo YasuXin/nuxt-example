@@ -69,7 +69,7 @@ export const skillsArray: SkillsArray[] = [
 
 export const productArray: ProductArray[] = [
     {id: 1, title: "架空ねこカフェ", text: "架空のネコカフェのサイト。", textDetail: "架空のネコカフェのサイト。", src: 1, link: 'https://kakuunekocafe.netlify.app'},
-    {id: 2, title: "---", text: "製作中", textDetail: "製作中", src: 0, link: ''},
+    {id: 2, title: "ヨウムシミュレーター！？", text: "ヨウムっぽくしゃべる人工無能", textDetail: "ヨウムっぽくしゃべる人工無能です。", src: 2, link: 'https://chatbotyoumu.onrender.com/'},
     {id: 3, title: "---", text: "製作中", textDetail: "製作中", src: 0, link: ''},
     {id: 4, title: "---", text: "製作中", textDetail: "製作中", src: 0, link: ''},
 ]
