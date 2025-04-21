@@ -86,9 +86,6 @@ onMounted(() => {
     width: 95%;
     height: 90%;
   }
-  #career-items {
-
-  }
 }
 
 .fade1-enter-active {

@@ -84,7 +84,7 @@ onMounted(() => {
 .strength-text p {
   display: inline-block;
   width: 80%;
-  height: 90%;
+  height: 95%;
   overflow: hidden;
   text-overflow: ellipsis;
 }
